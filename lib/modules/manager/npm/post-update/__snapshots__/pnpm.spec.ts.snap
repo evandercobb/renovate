@@ -6,6 +6,8 @@ exports[`modules/manager/npm/post-update/pnpm > catches errors 1`] = `
     "cmd": "pnpm install --lockfile-only --ignore-scripts --ignore-pnpmfile",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/pnpm-lock.yaml",
+      "docker": {},
       "env": {
         "HOME": "/home/user",
         "HTTPS_PROXY": "https://example.com",
@@ -15,11 +17,29 @@ exports[`modules/manager/npm/post-update/pnpm > catches errors 1`] = `
         "NO_PROXY": "localhost",
         "PATH": "/tmp/path",
       },
+      "extraEnv": {
+        "NPM_CONFIG_CACHE": undefined,
+        "npm_config_cache_dir": undefined,
+        "npm_config_store": undefined,
+        "npm_config_store_dir": undefined,
+        "pnpm_config_cache_dir": undefined,
+        "pnpm_config_store_dir": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^2.0.0",
+          "toolName": "pnpm",
+        },
+      ],
     },
   },
 ]
@@ -31,6 +51,8 @@ exports[`modules/manager/npm/post-update/pnpm > finds pnpm globally 1`] = `
     "cmd": "pnpm install --lockfile-only --ignore-scripts --ignore-pnpmfile",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/pnpm-lock.yaml",
+      "docker": {},
       "env": {
         "HOME": "/home/user",
         "HTTPS_PROXY": "https://example.com",
@@ -40,11 +62,29 @@ exports[`modules/manager/npm/post-update/pnpm > finds pnpm globally 1`] = `
         "NO_PROXY": "localhost",
         "PATH": "/tmp/path",
       },
+      "extraEnv": {
+        "NPM_CONFIG_CACHE": undefined,
+        "npm_config_cache_dir": undefined,
+        "npm_config_store": undefined,
+        "npm_config_store_dir": undefined,
+        "pnpm_config_cache_dir": undefined,
+        "pnpm_config_store_dir": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^2.0.0",
+          "toolName": "pnpm",
+        },
+      ],
     },
   },
 ]
@@ -56,6 +96,8 @@ exports[`modules/manager/npm/post-update/pnpm > generates lock files 1`] = `
     "cmd": "pnpm install --lockfile-only --ignore-scripts --ignore-pnpmfile",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/pnpm-lock.yaml",
+      "docker": {},
       "env": {
         "HOME": "/home/user",
         "HTTPS_PROXY": "https://example.com",
@@ -65,11 +107,29 @@ exports[`modules/manager/npm/post-update/pnpm > generates lock files 1`] = `
         "NO_PROXY": "localhost",
         "PATH": "/tmp/path",
       },
+      "extraEnv": {
+        "NPM_CONFIG_CACHE": undefined,
+        "npm_config_cache_dir": undefined,
+        "npm_config_store": undefined,
+        "npm_config_store_dir": undefined,
+        "pnpm_config_cache_dir": undefined,
+        "pnpm_config_store_dir": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^2.0.0",
+          "toolName": "pnpm",
+        },
+      ],
     },
   },
 ]
@@ -81,6 +141,8 @@ exports[`modules/manager/npm/post-update/pnpm > performs lock file maintenance 1
     "cmd": "pnpm install --lockfile-only --ignore-scripts --ignore-pnpmfile",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/pnpm-lock.yaml",
+      "docker": {},
       "env": {
         "HOME": "/home/user",
         "HTTPS_PROXY": "https://example.com",
@@ -90,11 +152,29 @@ exports[`modules/manager/npm/post-update/pnpm > performs lock file maintenance 1
         "NO_PROXY": "localhost",
         "PATH": "/tmp/path",
       },
+      "extraEnv": {
+        "NPM_CONFIG_CACHE": undefined,
+        "npm_config_cache_dir": undefined,
+        "npm_config_store": undefined,
+        "npm_config_store_dir": undefined,
+        "pnpm_config_cache_dir": undefined,
+        "pnpm_config_store_dir": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^2.0.0",
+          "toolName": "pnpm",
+        },
+      ],
     },
   },
 ]
@@ -106,6 +186,8 @@ exports[`modules/manager/npm/post-update/pnpm > uses the new version if packageM
     "cmd": "pnpm install --lockfile-only --ignore-scripts --ignore-pnpmfile",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/pnpm-lock.yaml",
+      "docker": {},
       "env": {
         "HOME": "/home/user",
         "HTTPS_PROXY": "https://example.com",
@@ -115,11 +197,29 @@ exports[`modules/manager/npm/post-update/pnpm > uses the new version if packageM
         "NO_PROXY": "localhost",
         "PATH": "/tmp/path",
       },
+      "extraEnv": {
+        "NPM_CONFIG_CACHE": undefined,
+        "npm_config_cache_dir": undefined,
+        "npm_config_store": undefined,
+        "npm_config_store_dir": undefined,
+        "pnpm_config_cache_dir": undefined,
+        "pnpm_config_store_dir": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "6.16.1",
+          "toolName": "pnpm",
+        },
+      ],
     },
   },
 ]
