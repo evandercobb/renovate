@@ -6,17 +6,38 @@ exports[`modules/manager/npm/post-update/yarn > allows and ignore scripts 1`] = 
     "cmd": "yarn install --mode=update-lockfile",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
         "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
 ]
@@ -28,14 +49,32 @@ exports[`modules/manager/npm/post-update/yarn > catches errors 1`] = `
     "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": undefined,
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
 ]
@@ -47,17 +86,38 @@ exports[`modules/manager/npm/post-update/yarn > does not use global cache if zer
     "cmd": "yarn install",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
         "YARN_ENABLE_SCRIPTS": "0",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_ENABLE_SCRIPTS": "0",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
 ]
@@ -69,75 +129,165 @@ exports[`modules/manager/npm/post-update/yarn > generates lock files using yarn 
     "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
     "options": {
       "cwd": "/some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_CACHE_FOLDER": "/tmp/renovate/cache/yarn",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": "/tmp/renovate/cache/yarn",
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
   {
     "cmd": "npx yarn-deduplicate --strategy fewer",
     "options": {
       "cwd": "/some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_CACHE_FOLDER": "/tmp/renovate/cache/yarn",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": "/tmp/renovate/cache/yarn",
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
     "options": {
       "cwd": "/some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_CACHE_FOLDER": "/tmp/renovate/cache/yarn",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": "/tmp/renovate/cache/yarn",
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
   {
     "cmd": "npx yarn-deduplicate --strategy highest",
     "options": {
       "cwd": "/some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_CACHE_FOLDER": "/tmp/renovate/cache/yarn",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": "/tmp/renovate/cache/yarn",
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
     "options": {
       "cwd": "/some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_CACHE_FOLDER": "/tmp/renovate/cache/yarn",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": "/tmp/renovate/cache/yarn",
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
 ]
@@ -149,6 +299,8 @@ exports[`modules/manager/npm/post-update/yarn > generates lock files using yarn 
     "cmd": "yarn install",
     "options": {
       "cwd": "/some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
@@ -157,11 +309,31 @@ exports[`modules/manager/npm/post-update/yarn > generates lock files using yarn 
         "YARN_GLOBAL_FOLDER": "/tmp/renovate/cache/berry",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_ENABLE_SCRIPTS": "0",
+        "YARN_GLOBAL_FOLDER": "/tmp/renovate/cache/berry",
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
 ]
@@ -173,6 +345,8 @@ exports[`modules/manager/npm/post-update/yarn > generates lock files using yarn 
     "cmd": "yarn install",
     "options": {
       "cwd": "/some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
@@ -181,17 +355,39 @@ exports[`modules/manager/npm/post-update/yarn > generates lock files using yarn 
         "YARN_GLOBAL_FOLDER": "/tmp/renovate/cache/berry",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_ENABLE_SCRIPTS": "0",
+        "YARN_GLOBAL_FOLDER": "/tmp/renovate/cache/berry",
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn dedupe --strategy highest",
     "options": {
       "cwd": "/some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
@@ -200,11 +396,31 @@ exports[`modules/manager/npm/post-update/yarn > generates lock files using yarn 
         "YARN_GLOBAL_FOLDER": "/tmp/renovate/cache/berry",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_ENABLE_SCRIPTS": "0",
+        "YARN_GLOBAL_FOLDER": "/tmp/renovate/cache/berry",
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
 ]
@@ -216,6 +432,8 @@ exports[`modules/manager/npm/post-update/yarn > generates lock files using yarn 
     "cmd": "yarn install --mode=update-lockfile",
     "options": {
       "cwd": "/some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
@@ -223,17 +441,38 @@ exports[`modules/manager/npm/post-update/yarn > generates lock files using yarn 
         "YARN_GLOBAL_FOLDER": "/tmp/renovate/cache/berry",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_GLOBAL_FOLDER": "/tmp/renovate/cache/berry",
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn dedupe --strategy highest --mode=update-lockfile",
     "options": {
       "cwd": "/some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
@@ -241,11 +480,30 @@ exports[`modules/manager/npm/post-update/yarn > generates lock files using yarn 
         "YARN_GLOBAL_FOLDER": "/tmp/renovate/cache/berry",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_GLOBAL_FOLDER": "/tmp/renovate/cache/berry",
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
 ]
@@ -257,34 +515,76 @@ exports[`modules/manager/npm/post-update/yarn > only skips build if skipInstalls
     "cmd": "yarn install --mode=skip-build",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
         "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn dedupe --strategy highest --mode=skip-build",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
         "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
 ]
@@ -296,70 +596,160 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file maintenance i
     "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
     "options": {
       "cwd": "some-dir/sub_workspace",
+      "cwdFile": "some-dir/sub_workspace/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": undefined,
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
   {
     "cmd": "npx yarn-deduplicate --strategy fewer",
     "options": {
       "cwd": "some-dir/sub_workspace",
+      "cwdFile": "some-dir/sub_workspace/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": undefined,
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
     "options": {
       "cwd": "some-dir/sub_workspace",
+      "cwdFile": "some-dir/sub_workspace/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": undefined,
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
   {
     "cmd": "npx yarn-deduplicate --strategy highest",
     "options": {
       "cwd": "some-dir/sub_workspace",
+      "cwdFile": "some-dir/sub_workspace/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": undefined,
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
     "options": {
       "cwd": "some-dir/sub_workspace",
+      "cwdFile": "some-dir/sub_workspace/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": undefined,
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
 ]
@@ -371,6 +761,8 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file maintenance i
     "cmd": "yarn install",
     "options": {
       "cwd": "some-dir/sub_workspace",
+      "cwdFile": "some-dir/sub_workspace/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
@@ -378,11 +770,31 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file maintenance i
         "YARN_ENABLE_SCRIPTS": "0",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_ENABLE_SCRIPTS": "0",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
 ]
@@ -394,6 +806,8 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file maintenance i
     "cmd": "yarn install",
     "options": {
       "cwd": "some-dir/sub_workspace",
+      "cwdFile": "some-dir/sub_workspace/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
@@ -401,17 +815,39 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file maintenance i
         "YARN_ENABLE_SCRIPTS": "0",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_ENABLE_SCRIPTS": "0",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn dedupe --strategy highest",
     "options": {
       "cwd": "some-dir/sub_workspace",
+      "cwdFile": "some-dir/sub_workspace/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
@@ -419,11 +855,31 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file maintenance i
         "YARN_ENABLE_SCRIPTS": "0",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_ENABLE_SCRIPTS": "0",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
 ]
@@ -435,34 +891,76 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file maintenance i
     "cmd": "yarn install --mode=update-lockfile",
     "options": {
       "cwd": "some-dir/sub_workspace",
+      "cwdFile": "some-dir/sub_workspace/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
         "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn dedupe --strategy highest --mode=update-lockfile",
     "options": {
       "cwd": "some-dir/sub_workspace",
+      "cwdFile": "some-dir/sub_workspace/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
         "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
 ]
@@ -474,70 +972,160 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file maintenance u
     "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": undefined,
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
   {
     "cmd": "npx yarn-deduplicate --strategy fewer",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": undefined,
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": undefined,
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
   {
     "cmd": "npx yarn-deduplicate --strategy highest",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": undefined,
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": undefined,
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
 ]
@@ -549,6 +1137,8 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file maintenance u
     "cmd": "yarn install",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
@@ -556,11 +1146,31 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file maintenance u
         "YARN_ENABLE_SCRIPTS": "0",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_ENABLE_SCRIPTS": "0",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
 ]
@@ -572,6 +1182,8 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file maintenance u
     "cmd": "yarn install",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
@@ -579,17 +1191,39 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file maintenance u
         "YARN_ENABLE_SCRIPTS": "0",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_ENABLE_SCRIPTS": "0",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn dedupe --strategy highest",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
@@ -597,11 +1231,31 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file maintenance u
         "YARN_ENABLE_SCRIPTS": "0",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_ENABLE_SCRIPTS": "0",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
 ]
@@ -613,28 +1267,64 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file updates and f
     "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": undefined,
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn upgrade some-dep --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": undefined,
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
 ]
@@ -646,28 +1336,64 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file updates using
     "cmd": "yarn install --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": undefined,
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn upgrade some-dep --ignore-engines --ignore-platform --network-timeout 100000 --ignore-scripts",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
+      },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_CACHE_FOLDER": undefined,
+        "npm_config_store": undefined,
       },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.10.0",
+          "toolName": "yarn-slim",
+        },
+      ],
     },
   },
 ]
@@ -679,6 +1405,8 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file updates using
     "cmd": "yarn install",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
@@ -686,17 +1414,39 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file updates using
         "YARN_ENABLE_SCRIPTS": "0",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_ENABLE_SCRIPTS": "0",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn up -R some-dep",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
@@ -704,11 +1454,31 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file updates using
         "YARN_ENABLE_SCRIPTS": "0",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_ENABLE_SCRIPTS": "0",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
 ]
@@ -720,34 +1490,76 @@ exports[`modules/manager/npm/post-update/yarn > performs lock file updates using
     "cmd": "yarn install --mode=update-lockfile",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
         "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn up -R some-dep --mode=update-lockfile",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
         "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
 ]
@@ -759,34 +1571,76 @@ exports[`modules/manager/npm/post-update/yarn > performs yarn binary update usin
     "cmd": "yarn set version 3.0.1",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
         "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn install --mode=update-lockfile",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
         "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
 ]
@@ -798,34 +1652,76 @@ exports[`modules/manager/npm/post-update/yarn > performs yarn binary update usin
     "cmd": "yarn set version 3.0.1",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
         "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
   {
     "cmd": "yarn install --mode=update-lockfile",
     "options": {
       "cwd": "some-dir",
+      "cwdFile": "some-dir/yarn.lock",
+      "docker": {},
       "env": {
         "CI": "true",
         "YARN_ENABLE_GLOBAL_CACHE": "1",
         "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
         "YARN_HTTP_TIMEOUT": "100000",
       },
+      "extraEnv": {
+        "CI": "true",
+        "NPM_CONFIG_CACHE": undefined,
+        "YARN_ENABLE_GLOBAL_CACHE": "1",
+        "YARN_ENABLE_IMMUTABLE_INSTALLS": "false",
+        "YARN_GLOBAL_FOLDER": undefined,
+        "YARN_HTTP_TIMEOUT": "100000",
+        "npm_config_store": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "constraint": "16.16.0",
+          "toolName": "node",
+        },
+        {
+          "constraint": "^1.22.18",
+          "toolName": "yarn",
+        },
+      ],
     },
   },
 ]
