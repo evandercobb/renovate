@@ -121,6 +121,8 @@ describe('modules/manager/maven-wrapper/artifacts', () => {
         cmd: './mvnw wrapper:wrapper',
         options: {
           cwd: '/tmp/github',
+          cwdFile: '../../mvnw',
+          docker: {},
           env: {
             HOME: '/home/user',
             HTTPS_PROXY: 'https://example.com',
@@ -130,11 +132,18 @@ describe('modules/manager/maven-wrapper/artifacts', () => {
             NO_PROXY: 'localhost',
             PATH: '/tmp/path',
           },
+          extraEnv: {},
           maxBuffer: 10485760,
           timeout: 900000,
           stdin: 'pipe',
           stdout: 'pipe',
           stderr: 'pipe',
+          toolConstraints: [
+            {
+              constraint: '^17.0.0',
+              toolName: 'java',
+            },
+          ],
         },
       },
     ]);
@@ -156,6 +165,8 @@ describe('modules/manager/maven-wrapper/artifacts', () => {
         cmd: './mvnw wrapper:wrapper',
         options: {
           cwd: '/tmp/github',
+          cwdFile: '../../mvnw',
+          docker: {},
           env: {
             HOME: '/home/user',
             HTTPS_PROXY: 'https://example.com',
@@ -165,11 +176,18 @@ describe('modules/manager/maven-wrapper/artifacts', () => {
             NO_PROXY: 'localhost',
             PATH: '/tmp/path',
           },
+          extraEnv: {},
           maxBuffer: 10485760,
           timeout: 900000,
           stdin: 'pipe',
           stdout: 'pipe',
           stderr: 'pipe',
+          toolConstraints: [
+            {
+              constraint: '^8.0.0',
+              toolName: 'java',
+            },
+          ],
         },
       },
     ]);

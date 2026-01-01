@@ -12,6 +12,8 @@ exports[`modules/manager/cocoapods/artifacts > returns null if unchanged 1`] = `
     "cmd": "pod install",
     "options": {
       "cwd": "/tmp/github/some/repo",
+      "cwdFile": "Podfile",
+      "docker": {},
       "env": {
         "HOME": "/home/user",
         "HTTPS_PROXY": "https://example.com",
@@ -21,11 +23,23 @@ exports[`modules/manager/cocoapods/artifacts > returns null if unchanged 1`] = `
         "NO_PROXY": "localhost",
         "PATH": "/tmp/path",
       },
+      "extraEnv": {
+        "CP_HOME_DIR": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "toolName": "ruby",
+        },
+        {
+          "constraint": null,
+          "toolName": "cocoapods",
+        },
+      ],
     },
   },
 ]
@@ -39,6 +53,8 @@ exports[`modules/manager/cocoapods/artifacts > returns pod exec error 1`] = `
     "cmd": "pod install",
     "options": {
       "cwd": "/tmp/github/some/repo",
+      "cwdFile": "Podfile",
+      "docker": {},
       "env": {
         "HOME": "/home/user",
         "HTTPS_PROXY": "https://example.com",
@@ -48,11 +64,23 @@ exports[`modules/manager/cocoapods/artifacts > returns pod exec error 1`] = `
         "NO_PROXY": "localhost",
         "PATH": "/tmp/path",
       },
+      "extraEnv": {
+        "CP_HOME_DIR": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "toolName": "ruby",
+        },
+        {
+          "constraint": null,
+          "toolName": "cocoapods",
+        },
+      ],
     },
   },
 ]
@@ -68,6 +96,8 @@ exports[`modules/manager/cocoapods/artifacts > returns updated Podfile 1`] = `
     "cmd": "docker run --rm --name=renovate_sidecar --label=renovate_child -v "/tmp/github/some/repo":"/tmp/github/some/repo" -v "/tmp/cache":"/tmp/cache" -e CONTAINERBASE_CACHE_DIR -w "/tmp/github/some/repo" ghcr.io/containerbase/sidecar bash -l -c "install-tool ruby 3.1.0 && install-tool cocoapods 3.1.0 && gem install cocoapods-acknowledgements && pod install"",
     "options": {
       "cwd": "/tmp/github/some/repo",
+      "cwdFile": "Podfile",
+      "docker": {},
       "env": {
         "CONTAINERBASE_CACHE_DIR": "/tmp/cache/containerbase",
         "HOME": "/home/user",
@@ -78,11 +108,23 @@ exports[`modules/manager/cocoapods/artifacts > returns updated Podfile 1`] = `
         "NO_PROXY": "localhost",
         "PATH": "/tmp/path",
       },
+      "extraEnv": {
+        "CP_HOME_DIR": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "toolName": "ruby",
+        },
+        {
+          "constraint": null,
+          "toolName": "cocoapods",
+        },
+      ],
     },
   },
 ]
@@ -98,6 +140,8 @@ exports[`modules/manager/cocoapods/artifacts > returns updated Podfile and Pods 
     "cmd": "docker run --rm --name=renovate_sidecar --label=renovate_child -v "/tmp/github/some/repo":"/tmp/github/some/repo" -v "/tmp/cache":"/tmp/cache" -e CONTAINERBASE_CACHE_DIR -w "/tmp/github/some/repo" ghcr.io/containerbase/sidecar bash -l -c "install-tool ruby 3.1.0 && install-tool cocoapods 3.1.0 && pod install"",
     "options": {
       "cwd": "/tmp/github/some/repo",
+      "cwdFile": "Podfile",
+      "docker": {},
       "env": {
         "CONTAINERBASE_CACHE_DIR": "/tmp/cache/containerbase",
         "HOME": "/home/user",
@@ -108,11 +152,23 @@ exports[`modules/manager/cocoapods/artifacts > returns updated Podfile and Pods 
         "NO_PROXY": "localhost",
         "PATH": "/tmp/path",
       },
+      "extraEnv": {
+        "CP_HOME_DIR": undefined,
+      },
       "maxBuffer": 10485760,
       "stderr": "pipe",
       "stdin": "pipe",
       "stdout": "pipe",
       "timeout": 900000,
+      "toolConstraints": [
+        {
+          "toolName": "ruby",
+        },
+        {
+          "constraint": null,
+          "toolName": "cocoapods",
+        },
+      ],
     },
   },
 ]

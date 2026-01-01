@@ -53,6 +53,7 @@ function getRawExecOptions(opts: ExecOptions): RawExecOptions {
   const maxBuffer = opts.maxBuffer ?? 10 * 1024 * 1024;
 
   return {
+    ...opts,
     cwd,
     env: childEnv,
     maxBuffer,
